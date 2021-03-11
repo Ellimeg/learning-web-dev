@@ -2,9 +2,9 @@
   "name": "minimal-express-bootstrap",
   "version": "1.0.0",
   "description": "minimal node express bootstrap project",
-  "main": "src/index.js",
+  "main": "start.js",
   "scripts": {
-    "start": "nodemon src/index.js --watch src node_modules --exec babel-node",
+    "start": "nodemon src/start.js --watch src node_modules --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +26,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.10.0",
+    "http-auth": "^4.1.2",
+    "mongoose": "^5.11.19",
     "pug": "^3.0.2"
   }
 }

@@ -9,16 +9,17 @@
 - environment variables for the application's sensitive information. 
 
 1.	Install Express
-	
+
 	npm install express
 
 2.	Include Express by adding a  requires statement into src/index.js, allowing creation of an instance of an Express application:
-![neb5.1](\images\neb\neb5.1.JPG)
+	 ![neb5.1](\images\neb\neb5.1.JPG)
 
 3.	Save changes:
-![neb5.2](.\images\neb\neb5.2.JPG)
+	 ![neb5.2](.\images\neb\neb5.2.JPG)
 
-  Although the express server is available, there is nothing much to see via the browser:![neb5.3](.\images\neb\neb5.3.JPG)
+	Although the express server is available, there is nothing much to see via the browser:
+	 ![neb5.3](.\images\neb\neb5.3.JPG)
 
 ## Configure routes.
 
@@ -39,9 +40,10 @@
   	Once the file is saved, the application will restart automatically due to our setup. 
   	
   	Refresh bowser:
-  	![neb5.4](D:\repos\github\ellimeg\learning-web-dev\node\minimal-express-bootstrap\docs\images\neb\neb5.4.JPG)
+  	 ![neb5.4](.\images\neb\neb5.4.JPG)
   	
-  	Assuming you have curl installed, in a PowerShell window  execute curl http://localhost:3000  ![neb5.5](.\images\neb\neb5.5.png)
+  	Assuming you have curl installed, in a PowerShell window  execute curl http://localhost:3000
+  	 ![neb5.5](.\images\neb\neb5.5.png)
   	
   	Essentially **every Express application is a just a series of [routing and middleware](./Express.md) function calls**.:
 
@@ -53,51 +55,47 @@
 
 	**npm install cors**
 
-2. Update **src/index.js**![image-20210308194800276](C:\Users\goodinrx\AppData\Roaming\Typora\typora-user-images\image-20210308194800276.png)
+2. Update **src/index.js**
+	 ![neb5.5](.\images\neb\neb5.5.JPG)   
 
-After these changes, all routes are extended with CORS HTTP headers. By default all routes are accessible for all domains now.
+   After these changes, all routes are extended with CORS HTTP headers. By default all routes are accessible for all domains now.
 
-Assuming you have curl installed, in a new in a PowerShell terminal again execute curl http://localhost:3000 
+   Assuming you have curl installed, in a new in a PowerShell terminal again execute curl http://localhost:3000
+    ![neb5.6](.\images\neb\neb5.6.png)
 
-![neb5.6](.\images\neb\neb5.6.png)
-
-Note: Headers now includes Access-Control-Allow-Origin set to wildcard.
-
-Note, this is not used just yet, but at the time of deploying an application to production, a whitelist of domains which are allowed to access your Express server application should be set up. The CORS library offers this kind of configuration. 
+   Note: 
+   (1) Headers now includes Access-Control-Allow-Origin set to wildcard.
+   (2) This is not used just yet, but at the time of deploying an application to production, a whitelist of domains which are allowed to access your Express server application should be set up. The CORS library offers this kind of configuration. 
 
 3. Finally move the hard coded port number to the **.env** file
 
   	PORT=3000
-
-And update index.js to use the .env file:
-![neb5.7](.\images\neb\neb5.7.JPG)
-Or using back tick " ` " at both ends, not single quote " ' "
-![neb5.8](.\images\neb\neb5.8.JPG) 
-
-
-
+  	
+  	And update index.js to use the .env file:
+  	 ![neb5.7](.\images\neb\neb5.7.JPG)
+  	Or using back tick " ` " at both ends, not single quote " ' "
+  	 ![neb5.8](.\images\neb\neb5.8.JPG) 
 ## Implement basic routing.
 
 1. Add the following routes to your Express application the URI itself doesn't change, but the method used **from** the Express instance does:
 
 Add the following routes to **index.js** (Change the Hello World message and add new method for POST )
-![neb5.9](.\images\neb\neb5.9.JPG)
+ ![neb5.9](.\images\neb\neb5.9.JPG)
 
 2. Test endpoints using curl in a basic command prompt.
-By default cURL will use a HTTP GET method. However, you can specify the HTTP method with the -X flag (or --request flag). Depending on the HTTP method you are choosing, you will access different routes of your Express application: 
-![neb5.10](.\images\neb\neb5.10.png)
+By default cURL will use a HTTP GET method. However, you can specify the HTTP method with the -X flag (or --request flag). Depending on the HTTP method you are choosing, you will access different routes of your Express application:
+ ![neb5.10](.\images\neb\neb5.10.png)
 Note: attempting a PUT without having a PUT support in index.js gives and error.
 3. Add PUT and DELETE support. Update index.js:
-![neb5.11](.\images\neb\neb5.11.JPG)
+ ![neb5.11](.\images\neb\neb5.11.JPG)
 4. Make the URIs rest resources
 Operating on the root URI with the CRUD operations doesn't really represent requesting a resource in REST. A resource could be a user resource, for example. Change the previously introduced routes to the following. Update index.js:
-![neb5.12](.\images\neb\neb5.12.JPG)
+ ![neb5.12](.\images\neb\neb5.12.JPG)
 
 Curl operations would now use : http://localhost:3000/users
 
 Execute in command window:
-
-![neb5.13](.\images\neb\neb5.13.png)
+ ![neb5.13](.\images\neb\neb5.13.png)
 
 No information is transferred for creating a user yet, so the API endpoint for creating a user would be available now. However, one piece is missing to make the PUT HTTP method (update operation) and DELETE HTTP method (delete operation) RESTful from a URI's point of view: user id. Update index.js:
 ![neb5.14](.\images\neb\neb5.14.JPG)

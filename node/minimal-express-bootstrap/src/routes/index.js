@@ -1,30 +1,13 @@
-require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
+const mongoose = require('mongoose');
+const router = express.Router();
 
-console.log('Hello Demo');
-
-console.log(process.env.MY_SECRET);
-
-const app = express();
-
-app.use(cors());
-
-app.get('/users', (req,  res) => {
-    return res.send('Recieved a GET HTTP message');
+router.get('/', (req, res) => {
+    return res.send('Node Express Demo App');
 });
 
-app.post('/users', (req,  res) => {
-    return res.send('Recieved a POST HTTP message');
+router.get('/api', (req, res) => {
+    return res.send('API Page');
 });
 
-app.put('/users', (req,  res) => {
-    return res.send('Recieved a PUT HTTP message');
-});
-
-app.delete('/users', (req,  res) => {
-    return res.send('Recieved a DELETE HTTP message');
-});
-
-app.listen(3000, () => console.log(`My app listerning on port ${process.env.PORT}!`));
-
+module.exports = router;
