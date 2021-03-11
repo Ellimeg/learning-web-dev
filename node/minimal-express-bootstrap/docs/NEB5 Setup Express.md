@@ -8,51 +8,50 @@
 - Babel to enable JavaScript features that are not supported in Node.js yet, and 
 - environment variables for the application's sensitive information. 
 
-1. Install Express
+1.	Install Express
+	
+	npm install express
 
-  	npm install express
-
-2. Include Express by adding a  requires statement into src/index.js, allowing creation of an instance of an Express application:
+2.	Include Express by adding a  requires statement into src/index.js, allowing creation of an instance of an Express application:
 ![neb5.1](\images\neb\neb5.1.JPG)
 
-3. Save changes:
-    ![neb5.2](.\images\neb\neb5.2.JPG)
+3.	Save changes:
+![neb5.2](.\images\neb\neb5.2.JPG)
 
-  Although the express server is available, there is nothing much to see via the browser:
-  ![neb5.3](.\images\neb\neb5.3.JPG)
+  Although the express server is available, there is nothing much to see via the browser:![neb5.3](.\images\neb\neb5.3.JPG)
 
 ## Configure routes.
 
-1. Add to the following code to index.js
+1.	Add to the following code to index.js
 
   	app.get('/', (req,  res) => {
   	    res.send('Hello World!');
   	});
-
-Aim: Using the **res**ponse object's send method to send something back to our client application. 
-
-The response object is everything we need related to specifying a response for our client, 
-
-The **req**uest object is everything we get from this particular request from our client. 
-
- The route points to the **root  (/)** of the domain. In the browser, you can visit this route with http://localhost:3000/ or http://localhost:3000 without the trailing slash.
-
-Once the file is saved, the application will restart automatically due to our setup. 
-
-Refresh bowser:
-![neb5.4](D:\repos\github\ellimeg\learning-web-dev\node\minimal-express-bootstrap\docs\images\neb\neb5.4.JPG)
-
-Assuming you have curl installed, in a PowerShell window  execute curl http://localhost:3000  ![neb5.5](.\images\neb\neb5.5.png)
-
-Essentially **every Express application is a just a series of [routing and middleware](./Express.md) function calls**.:
+  	
+  	Aim: Using the **res**ponse object's send method to send something back to our client application. 
+  	
+  	The response object is everything we need related to specifying a response for our client, 
+  	
+  	The **req**uest object is everything we get from this particular request from our client. 
+  	
+  	The route points to the **root  (/)** of the domain. In the browser, you can visit this route with http://localhost:3000/ or http://localhost:3000 without the trailing slash.
+  	
+  	Once the file is saved, the application will restart automatically due to our setup. 
+  	
+  	Refresh bowser:
+  	![neb5.4](D:\repos\github\ellimeg\learning-web-dev\node\minimal-express-bootstrap\docs\images\neb\neb5.4.JPG)
+  	
+  	Assuming you have curl installed, in a PowerShell window  execute curl http://localhost:3000  ![neb5.5](.\images\neb\neb5.5.png)
+  	
+  	Essentially **every Express application is a just a series of [routing and middleware](./Express.md) function calls**.:
 
 ## Implement application-level middleware.
 
-1. Install https://www.npmjs.com/package/cors. 
+1.	Install https://www.npmjs.com/package/cors. 
 
-   Cors, in this context,  is a node.js package for providing a [Connect](http://www.senchalabs.org/connect/)/[Express](http://expressjs.com/) middleware that can be used to enable [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (Cross-origin resource sharing) with various options.
+	Cors, in this context,  is a node.js package for providing a [Connect](http://www.senchalabs.org/connect/)/[Express](http://expressjs.com/) middleware that can be used to enable [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (Cross-origin resource sharing) with various options.
 
-  	npm install cors
+	**npm install cors**
 
 2. Update **src/index.js**![image-20210308194800276](C:\Users\goodinrx\AppData\Roaming\Typora\typora-user-images\image-20210308194800276.png)
 

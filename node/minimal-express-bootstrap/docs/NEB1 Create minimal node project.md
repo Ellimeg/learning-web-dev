@@ -16,11 +16,7 @@
 
    If the flag is left out, you are in charge to specify the information about your project manually.
 
-   
-
    ![neb1.1](.\images\neb\neb1.1.JPG)
-
-   
 
 3. Defaults are changeable on the command line (before running init), or via the editor (after running init).
 
@@ -40,11 +36,10 @@
 
 5. Add a description and the key words     "nodejs", "bootstrap" and "express"; package.json should look like this:	
 
-![neb1.2](.\images\neb\neb1.2.JPG)
+   ![neb1.2](.\images\neb\neb1.2.JPG)
 
-
-
-5. **Create a src/ folder** for the project's source code. In this folder, **create a src/index.js file** as an entry point to the     	project
+5. **Create a src/ folder** for the project's source code. 
+   In this folder, **create a src/index.js file** as an entry point to the project
 
 6. Introduce a logging statement  in the src/index.js file to make sure this setup is running:
 
@@ -54,24 +49,21 @@
 
    ..\minimal-express-bootstrap> **node src\index.js**
 
-8. Move this codeinto the package.json file script section, because that's where all the project's scripts (start, test, deploy) will end up eventually.
+8. Move this codeinto the package.json file script section, 
+   because that's where all the project's scripts (start, test, deploy) will end up eventually.
 
    ​	"scripts": {
-
    ​			**"start": "node src/index.js"**,
-
    ​			 "test": "echo \"Error: no test specified\" && exit 1"
-
     	},
 
-Now on the command line, run the script again, but this time with **npm start**. 
+   Now on the command line, run the script again, but this time with **npm start**. 
 
-npm = node package manger
+   npm = node package manger
 
-Now that the project is created, we'll install libraries (node packages) to the project with npm. 
+   Now that the project is created, we'll install libraries (node packages) to the project with npm. 
 
-Note: once the first library is installed to the project using npm , it shows up in the package.json file as dependency. 
+   Note: once the first library is installed to the project using npm , it shows up in the package.json file as dependency.
+   A ***node_modules/*** folder will also show up, where all the installed libraries will be kept as actual source code. 
 
-A ***node_modules/*** folder will also show up, where all the installed libraries will be kept as actual source code. 
-
-Note the entry *"main" : "start.js"* in the package.json is the  entry point for the application, app.js (but more on that later)
+   Note the entry *"main" : "start.js"* in the package.json is the  entry point for the application, app.js (but more on that later)
