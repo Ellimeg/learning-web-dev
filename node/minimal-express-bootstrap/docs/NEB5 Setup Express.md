@@ -42,7 +42,7 @@ Once the file is saved, the application will restart automatically due to our se
 Refresh bowser:
 ![neb5.4](D:\repos\github\ellimeg\learning-web-dev\node\minimal-express-bootstrap\docs\images\neb\neb5.4.JPG)
 
-Assuming you have curl installed, in a PowerShell window (you get more info back) execute curl http://localhost:3000  ![neb5.5](.\images\neb\neb5.5.JPG)
+Assuming you have curl installed, in a PowerShell window  execute curl http://localhost:3000  ![neb5.5](.\images\neb\neb5.5.png)
 
 Essentially **every Express application is a just a series of [routing and middleware](./Express.md) function calls**.:
 
@@ -60,17 +60,17 @@ After these changes, all routes are extended with CORS HTTP headers. By default 
 
 Assuming you have curl installed, in a new in a PowerShell terminal again execute curl http://localhost:3000 
 
-![neb5.6](.\images\neb\neb5.6.JPG)
+![neb5.6](.\images\neb\neb5.6.png)
 
-Note: Headers now includes Access-Control-Allow-Origin set to wildcard i.e. everything.
+Note: Headers now includes Access-Control-Allow-Origin set to wildcard.
 
-Not used just yet, but at the time of depolying an application to production, a whitelist of domains which are allowed to access your Express server application should be set up. The CORS library offers this kind of configuration. 
+Note, this is not used just yet, but at the time of deploying an application to production, a whitelist of domains which are allowed to access your Express server application should be set up. The CORS library offers this kind of configuration. 
 
-3. Finally move the hard coded     port number to Environment Variables
+3. Finally move the hard coded port number to the **.env** file
 
   	PORT=3000
 
-And update index.js to use the env file:
+And update index.js to use the .env file:
 ![neb5.7](.\images\neb\neb5.7.JPG)
 Or using back tick " ` " at both ends, not single quote " ' "
 ![neb5.8](.\images\neb\neb5.8.JPG) 
@@ -86,7 +86,7 @@ Add the following routes to **index.js** (Change the Hello World message and add
 
 2. Test endpoints using curl in a basic command prompt.
 By default cURL will use a HTTP GET method. However, you can specify the HTTP method with the -X flag (or --request flag). Depending on the HTTP method you are choosing, you will access different routes of your Express application: 
-![neb5.10](.\images\neb\neb5.10.JPG)
+![neb5.10](.\images\neb\neb5.10.png)
 Note: attempting a PUT without having a PUT support in index.js gives and error.
 3. Add PUT and DELETE support. Update index.js:
 ![neb5.11](.\images\neb\neb5.11.JPG)
@@ -98,7 +98,7 @@ Curl operations would now use : http://localhost:3000/users
 
 Execute in command window:
 
-![neb5.13](.\images\neb\neb5.13.JPG)
+![neb5.13](.\images\neb\neb5.13.png)
 
 No information is transferred for creating a user yet, so the API endpoint for creating a user would be available now. However, one piece is missing to make the PUT HTTP method (update operation) and DELETE HTTP method (delete operation) RESTful from a URI's point of view: user id. Update index.js:
 ![neb5.14](.\images\neb\neb5.14.JPG)
@@ -106,4 +106,4 @@ No information is transferred for creating a user yet, so the API endpoint for c
 In order to delete or update a user resource, you would need to know the exact user. That's where unique identifiers are used. In our Express routes, we can assign unique identifiers with parameters in the URI. Then the [callback function](https://www.robinwieruch.de/javascript-callback-function) holds the URI's parameter in the request object's properties.
 
 Verify that the identifier shows up in the command line as output when executing cURL operation on /users/1, /users/2 or another identifier with a DELETE or UPDATE HTTP method.
-![neb5.15](.\images\neb\neb5.15.JPG)
+![neb5.15](.\images\neb\neb5.15.png)
