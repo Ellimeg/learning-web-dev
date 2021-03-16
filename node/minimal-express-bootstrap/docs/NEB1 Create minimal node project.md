@@ -1,22 +1,27 @@
 # **NEB1 Create Minimal Node Project**
 
-1. Create a directory for the project called minimal-express-bootstrap 
+**Prerequisite**
+Nodejs & npm installed
+Check that node and  npm are installed by checking for version 
+
+**Create project**
+
+1. Move to a directory where the project will be created and create project folder:
 
    **mkdir minimal-express-bootstrap**
 
-   This will be the root directory of the project. Navigate to this directory.
-
-2. Check that node and  npm are installed by checking for version 
-
-   Since we are creating a node project create a [package.json](https://docs.npmjs.com/files/package.json) file (to hold your project’s dependencies and other identifying information. (more info [here](https://nodejs.dev/learn/the-package-json-guide)) ) simply by typing
+2. A node project requires a [package.json](https://docs.npmjs.com/files/package.json) file (to hold your project’s dependencies and
+other identifying information. (more info [here](https://nodejs.dev/learn/the-package-json-guide)) ) simply by typing
 
    **npm init -y**  
 
-   Where **-y = shorthand flag**, telling npm that it should take all the defaults. 
+   Where **-y = shorthand flag**, telling npm that it should take all the defaults.
 
-   If the flag is left out, you are in charge to specify the information about your project manually.
+    ![neb1.1](.\images\neb\neb1.1.JPG) 
 
-   ![neb1.1](.\images\neb\neb1.1.JPG)
+   If the flag is left out, You'll be prompted with a few questions to initialize the basic information required in the package.json.
+   
+   The package.json is created in the root directory of the project. Navigate to this directory.   
 
 3. Defaults are changeable on the command line (before running init), or via the editor (after running init).
 
@@ -34,16 +39,14 @@
 
 4. Add information about the project, including its name, author and license. 
 
-5. Add a description and the key words     "nodejs", "bootstrap" and "express"; package.json should look like this:	
-
-   ![neb1.2](.\images\neb\neb1.2.JPG)
+5. Add a description and the key words. package.json should look like this:
+    ![neb1.2](.\images\neb\neb1.2.JPG)
 
 5. **Create a src/ folder** for the project's source code. 
    In this folder, **create a src/index.js file** as an entry point to the project
 
 6. Introduce a logging statement  in the src/index.js file to make sure this setup is running:
-
-   ![neb1.3](.\images\neb\neb1.3.JPG)
+    ![neb1.3](.\images\neb\neb1.3.JPG)
 
 7. Run this file from the command line using **node <path to file>**, the logging should appear in the terminal:
 
